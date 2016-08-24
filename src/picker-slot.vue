@@ -1,7 +1,7 @@
 <template>
   <div class="picker-slot {{classNames}}" :style="{ flex: flex }">
     <div v-if="!divider" v-el:wrapper class="picker-slot-wrapper" :class="{ dragging: dragging }" :style="{ height: contentHeight + 'px' }">
-      <div class="picker-item" v-for="itemValue in values" :class="{ 'picker-selected': itemValue === value }">{{ itemValue }}</div>
+      <div class="picker-item" v-for="itemValue in values" track-by="$index" :class="{ 'picker-selected': itemValue === value }">{{ itemValue }}</div>
     </div>
     <div v-if="divider">{{ content }}</div>
   </div>
